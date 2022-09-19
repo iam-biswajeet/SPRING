@@ -3,6 +3,7 @@ package com.nt.sbeans;
 import java.time.LocalDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //Target Class
@@ -11,14 +12,17 @@ public class WishMessageGeneratorApp {
 	// HAS-A PROPERTY
 	// field Injection
 	 @Autowired
+	// @Qualifier("sysDt")
 	private LocalDateTime ldt;
-
+	
 	// constructor injection
-	/*@Autowired
-	public WishMessageGeneratorApp(LocalDateTime ldt) {
+	//@Autowired
+	//@Qualifier("dob")//NA
+	/*public WishMessageGeneratorApp(@Qualifier("dob")LocalDateTime ldt) {
 		this.ldt=ldt;
 	}
-	@Autowired
+	*/
+	/*@Autowired
 	public WishMessageGeneratorApp() {
 		
 	}
