@@ -6,7 +6,8 @@
          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
   			<bean id="dt" class="java.util.Date"/>
   			<bean id="wmg" class="com.nt.sbeans.WishMessageGenerator">
-  		<property name="date" ref="dt"/>
+  			
+  		<constructor-arg name="date" ref="dt"/>
   			</bean>
   		
   			

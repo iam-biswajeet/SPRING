@@ -5,10 +5,10 @@ import java.util.Date;
 public class WishMessageGenerator {
 	// HAS-A-Property
 	private Date date;
-	/*public WishMessageGenerator(Date date) {
+	public WishMessageGenerator(Date date) {
 		System.out.println("WishMessageGenerator.WishMessageGenerator()");
 		this.date=date;
-	}*/
+	}
 
 	// setter method
 	public void setDate(Date date) {
