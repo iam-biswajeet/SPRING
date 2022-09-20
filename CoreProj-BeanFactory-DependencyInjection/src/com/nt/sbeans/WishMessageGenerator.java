@@ -19,6 +19,7 @@ public class WishMessageGenerator {
 	// get hour
 	public String getMessage(String user) {
 		int hour = date.getHours();
+		System.out.println(date);
 		if (hour < 12)
 			return "Good Morning";
 		else if (hour < 16)

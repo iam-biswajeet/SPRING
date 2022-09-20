@@ -4,7 +4,10 @@
     xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
          http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
-  			<bean id="dt" class="java.util.Date"/>
+  			<bean id="dt" class="java.util.Date">
+  			<constructor-arg value="100000" type="long" />
+  			</bean>
+  			
   			<bean id="wmg" class="com.nt.sbeans.WishMessageGenerator">
   			
   		<constructor-arg name="date" ref="dt"/>

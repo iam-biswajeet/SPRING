@@ -1,5 +1,6 @@
 package com.nt.test;
 
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 import com.nt.sbeans.SeasonGeneratorUsingMonthApp;
@@ -7,7 +8,7 @@ import com.nt.sbeans.SeasonGeneratorUsingMonthApp;
 public class SeasonFinderTest {
 	public static void main(String[] args) {
 		//create the spring Container
-		FileSystemXmlApplicationContext ctx=new FileSystemXmlApplicationContext("src/com/nt/config/applicationContext.xml");
+		ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//get the target class object
 		Object obj=ctx.getBean("season");
