@@ -11,9 +11,11 @@ public class SeasonFinderTest {
 		ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//get the target class object
-		Object obj=ctx.getBean("season");
+		/*Object obj=ctx.getBean("season");
 		//typecasting
 		SeasonGeneratorUsingMonthApp sga= (SeasonGeneratorUsingMonthApp)obj;
+		*/
+		SeasonGeneratorUsingMonthApp sga=ctx.getBean("season",SeasonGeneratorUsingMonthApp.class);
 		//execte b.logic
 		String message=sga.getMessage("Biswajit");
 		System.out.println(message);
