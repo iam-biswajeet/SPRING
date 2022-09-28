@@ -1,0 +1,33 @@
+package com.nt.comps;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public final class Flipkart {
+	public Flipkart() {
+		System.out.println("Flipkart.Flipkart()");
+	}
+	//has- a property
+	Courier courier;
+	//assigning depensdent class obj to target class
+
+	public void setCourier(Courier courier) {
+		this.courier = courier;
+	}
+	public String shopping(String[] items,double[] prices) {
+		System.out.println("Flipkart.shopping()");
+		//write the logic for bill calc
+		double billAmt=0.0;
+		for(int i=0;i<prices.length;i++) {
+			billAmt=billAmt+prices[i];
+		}
+		//generate a order id
+		int oid=new Random().nextInt();
+		//deliver the product
+		String deliveryMessage=courier.deliver(oid);
+		//display the Shopping details
+		return Arrays.toString(items)+"  are purcased billa amount "+billAmt+" "+deliveryMessage;
+		
+		
+	}
+}
