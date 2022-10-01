@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 @Component("fkrt")
 //@Scope("singleton")
-@Scope("prototype")
+@Scope("singleton")
 public final class Flipkart {
 	public Flipkart() {
 		System.out.println("Flipkart.Flipkart()");
 	}
 	//has- a property
 	@Autowired
-	@Qualifier("ff")
+	@Qualifier("ekart")
 	Courier courier;
 	
 	public String shopping(String[] items,double[] prices) {

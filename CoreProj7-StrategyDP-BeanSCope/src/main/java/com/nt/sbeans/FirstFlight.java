@@ -1,8 +1,10 @@
 package com.nt.sbeans;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("ff")
+@Scope("prototype")
 public final class FirstFlight implements Courier{
 	
 	public FirstFlight() {

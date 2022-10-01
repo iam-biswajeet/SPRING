@@ -1,8 +1,10 @@
 package com.nt.sbeans;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component("ekart")
+//@Scope("request")
 public final class Ekart implements Courier {
 	
 	public Ekart() {
