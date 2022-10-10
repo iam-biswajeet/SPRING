@@ -10,8 +10,10 @@
   			
   			<bean id="wmg" class="com.nt.sbeans.WishMessageGenerator">
   			
-  		<constructor-arg name="date" ref="dt"/>
+  	<!-- 	<constructor-arg name="date" ref="dt"/> -->
+  	<property name="date" ref="dt"/>
   			</bean>
+  			
   		
   			
   			

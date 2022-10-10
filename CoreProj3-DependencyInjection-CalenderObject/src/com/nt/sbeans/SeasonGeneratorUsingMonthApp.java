@@ -5,7 +5,7 @@ import java.util.Calendar;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 //make the class as spring bean
-@Component("season")
+@Component
 public class SeasonGeneratorUsingMonthApp {
 	//field injection
 	@Autowired
