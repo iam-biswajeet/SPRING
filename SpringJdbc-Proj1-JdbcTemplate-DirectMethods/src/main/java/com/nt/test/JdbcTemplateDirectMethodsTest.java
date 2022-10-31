@@ -22,8 +22,21 @@ public class JdbcTemplateDirectMethodsTest {
 		System.out.println(map);
 		System.out.println("========================================================");
 		List<Map<String,Object>>list=empService.fetchEmployeeByEmpDesg("CLERK", "MANAGER");
+		//System.out.println(list);
 		list.forEach(m->{System.out.println(m);});
 		System.out.println("========================================================");
+		/*
+		 * String msg1=empService.registerEmployee("Raja", "MANAGER", 90000f);
+		 * System.out.println(msg1);
+		 */
+		System.out.println("======================================================");
+		/*
+		 * String msg2=empService.hikeEmployeeSalaryByDesg(15.0f,"CLERK");
+		 * System.out.println(msg2);
+		 */
+		System.out.println("=============================================");
+		String msg3=empService.terminateEmployeeBySalaryRange(85000f, 100000f);
+		System.out.println(msg3);
 	}
 
 }

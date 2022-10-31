@@ -31,5 +31,20 @@ public class EmployeeMgmtServiceImpl implements IEmployeeMgmtService {
 		double sal=empDAO.getEmployeeSalByEmpId(no);
 		return sal;
 	}
+	@Override
+	public String hikeEmployeeSalaryByDesg(double percentage, String desg) {
+		int count=empDAO.updateEmployeeSalaryByDesg(percentage, desg);
+		return (count==0)?"No Employee salary is requiired for updation":count+" no of employee salary is updated";
+	}
+	@Override
+	public String registerEmployee(String ename, String desg, double salary) {
+		int count=empDAO.insertEmployee(ename, desg, salary);
+		return (count==0)?"Employee Not Registered":"Employee  Registration Successful";
+	}
+	@Override
+	public String terminateEmployeeBySalaryRange(double start, double end) {
+		int count=empDAO.deleteEmployeeBySalaryRange(start, end);
+		return (count==0)?"No employee is terminated":count+"  No of employee is Terminated";
+	}
 
 }
