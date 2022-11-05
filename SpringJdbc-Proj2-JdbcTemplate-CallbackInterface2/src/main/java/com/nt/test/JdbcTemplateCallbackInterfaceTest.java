@@ -1,5 +1,7 @@
 package com.nt.test;
 
+import java.util.List;
+
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nt.model.Employee;
@@ -13,6 +15,9 @@ public class JdbcTemplateCallbackInterfaceTest
     	IEmployeeMgmtService service=ctx.getBean("empService",IEmployeeMgmtService.class);
     	Employee emp=service.fetchEmployeeByNo(7499);
     	System.out.println(emp);
+    	System.out.println("====================================================");
+    	List<Employee> empsList=service.fetchEmployeeDetailsByDesg("CLERK");
+    	empsList.forEach(System.out::println);
     	
     }
 }
