@@ -1,0 +1,5 @@
+# Created at 2022-11-06T22:00:29.215
+Boot Manifest-JAR contains absolute paths in classpath 'E:\GIT-LOCAL-REPO\SPRING\Junit-Proj1-TestApp\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

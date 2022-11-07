@@ -7,12 +7,9 @@ public class BankLoanService {
 			throw new IllegalArgumentException("invalid input");
 		}
 		float interest=(pAmt*rate*year)/100;
-		try {
-		Thread.sleep(2000);
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
+		/*
+		 * try { Thread.sleep(2000); } catch(Exception e) { e.printStackTrace(); }
+		 */
 		return interest;
 	}
 

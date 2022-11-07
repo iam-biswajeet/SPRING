@@ -9,10 +9,21 @@ import java.time.Duration;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.MethodOrderer.OrderAnnotation;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import com.nt.sevice.BankLoanService;
-
+@DisplayName("BankLoanService")
+@TestMethodOrder(OrderAnnotation.class)
+//@TestMethodOrder(MethodName.class)
+//@TestMethodOrder(Random.class)
+//@TestMethodOrder(MethodOrderer.DisplayName.class)
 public class BankLoanServiceTest {
 	static BankLoanService service = null;
 	static float actual = 0.0f;
@@ -39,6 +50,9 @@ public class BankLoanServiceTest {
 	}
 
 	@Test
+	@DisplayName("BigNumber")
+	@Order(1)
+	@Tag("dev")
 	public void testcalcSimpleInterestAmountWithBigNumber() {
 		System.out.println("BankLoanServiceTest.testcalcSimpleInterestAmountWithBigNumber()");
 		actual = service.calcSimpleInterestAmount(10000000, 2, 12);
@@ -46,6 +60,10 @@ public class BankLoanServiceTest {
 		assertEquals(actual, expected, "actual!=expected");
 	}
 	@Test
+	@Disabled
+	@DisplayName("SmallNumber")
+	@Order(-1)
+	@Tag("uat")
 	public void testcalcSimpleInterestAmountWithSmallNumber() {
 		System.out.println("BankLoanServiceTest.testcalcSimpleInterestAmountWithSmallNumber()");
 		actual = service.calcSimpleInterestAmount(100000, 2, 12);
@@ -53,6 +71,10 @@ public class BankLoanServiceTest {
 		assertEquals(actual, expected, "actual!=expected");
 	}
 	@Test
+	@DisplayName("Exception")
+	@Order(0)
+	@Tag("dev")
+	@Tag("uat")
 	public void testcalcSimpleInterestAmountWithException() {
 		System.out.println("BankLoanServiceTest.testcalcSimpleInterestAmountWithException()");
 		assertThrows(IllegalArgumentException.class, () -> {
@@ -60,13 +82,20 @@ public class BankLoanServiceTest {
 		},"Not throwing IllegalArgument Exception");
 	}
 	@Test
-	public void testcalcSimpleInterestAmountWithTimer() {
+	@DisplayName("Timer")
+	@Order(5)
+	@Tag("dev")
+	public void testcalcSimpleInterestAmountWithTimer(TestInfo info) {
 		System.out.println("BankLoanServiceTest.testcalcSimpleInterestAmountWithTimer()");
+		System.out.println(info.getTags()+" "+info.getDisplayName());
 		assertTimeout(Duration.ofMillis(10000),()->{
 			service.calcSimpleInterestAmount(10000, 2, 12);
 		},"Takes More Time");
 	}
 	@Test
+	@DisplayName("NoException")
+	@Order(10)
+	@Tag("uat")
 	public void testcalcSimpleInterestAmountWithNoException() {
 		System.out.println("BankLoanServiceTest.testcalcSimpleInterestAmountWithNoException()");
 		assertDoesNotThrow( () -> {
