@@ -1,0 +1,6 @@
+2022-11-10 00:05:04,235:: com.nt.test.MyApp ::main:: status ::
+ 2022-11-10 00:05:04,244:: com.nt.test.MyApp ::main:: success:: ::
+ 2022-11-10 00:05:04,244:: com.nt.test.MyApp ::main:: exception ::
+ 2022-11-10 00:05:04,245:: com.nt.test.MyApp ::main:: warning ::
+ 2022-11-10 00:05:04,245:: com.nt.test.MyApp ::main:: serious problem ::
+ 
