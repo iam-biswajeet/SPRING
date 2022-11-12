@@ -4,14 +4,14 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.nt.service.ILoginService;
-import com.nt.service.LoginServiceImpl;
 
 public class SimpleJdbcCallTest {
 	public static void main(String[] args) {
-		ApplicationContext ctx=new ClassPathXmlApplicationContext("com/nt/cfgs/Beans.xml ");
-		ILoginService service=ctx.getBean(ILoginService.class);
+		ApplicationContext context=new ClassPathXmlApplicationContext("com/nt/cfgs/Beans.xml ");
+		ILoginService service=context.getBean(ILoginService.class);
 		String message=service.signIn("bapuni", "raja");
 		System.out.println(message);
+		
 	}
 
 }
