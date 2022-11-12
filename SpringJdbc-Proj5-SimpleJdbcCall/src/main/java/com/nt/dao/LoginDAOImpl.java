@@ -20,7 +20,7 @@ end;*/
 @Repository("loginDAO")
 public class LoginDAOImpl implements ILoginDAO {
 	@Autowired
-	SimpleJdbcCall sjc;
+	private SimpleJdbcCall sjc;
 
 	@Override
 	public String authenticate(String username, String password) {

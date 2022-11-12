@@ -8,7 +8,7 @@ import com.nt.dao.ILoginDAO;
 @Service("loginService")
 public class LoginServiceImpl implements ILoginService {
 	@Autowired
-	ILoginDAO dao;
+	private ILoginDAO dao;
 	@Override
 	public String signIn(String username, String password) {
 		return dao.authenticate(username, password);
