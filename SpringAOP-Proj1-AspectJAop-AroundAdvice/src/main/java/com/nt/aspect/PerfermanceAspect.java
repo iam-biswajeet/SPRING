@@ -1,5 +1,7 @@
 package com.nt.aspect;
 
+import java.util.Arrays;
+
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,7 +17,7 @@ public class PerfermanceAspect {
 		start=System.currentTimeMillis();
 		Object retValue=pjp.proceed();
 		end=System.currentTimeMillis();
-		System.out.println("Time Taken::"+(end-start));
+		System.out.println(pjp.getSignature()+Arrays.toString(pjp.getArgs())+"Time Taken::"+(end-start));
 		System.out.println("After Target");
 		return retValue;
 	}
